@@ -52,14 +52,14 @@ const TailwindEditor = () => {
 
   return (
     <div className="relative w-full max-w-screen-lg">
-      <div className="absolute right-5 top-5 z-10 mb-5 rounded-lg bg-accent px-2 py-1 text-sm text-muted-foreground">
+      <div className="absolute right-5 top-5 z-10 mb-5 rounded-lg bg-blue-50 dark:bg-gray-700 px-2 py-1 text-sm text-gray-400 dark:text-gray-400">
         {saveStatus}
       </div>
       <EditorRoot>
         <EditorContent
           initialContent={initialContent}
           extensions={extensions}
-          className="relative min-h-[500px] w-full max-w-screen-lg border-muted bg-background sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:shadow-lg"
+          className="relative min-h-[500px] w-full max-w-screen-lg border-muted bg-white dark:bg-gray-900 sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:shadow-lg"
           editorProps={{
             ...defaultEditorProps,
             attributes: {
@@ -72,23 +72,23 @@ const TailwindEditor = () => {
           }}
           slotAfter={<ImageResizer />}
         >
-          <EditorCommand className="z-50 h-auto max-h-[330px]  w-72 overflow-y-auto rounded-md border border-muted bg-background px-1 py-2 shadow-md transition-all">
-            <EditorCommandEmpty className="px-2 text-muted-foreground">
+          <EditorCommand className="z-50 h-auto max-h-[330px]  w-72 overflow-y-auto rounded-md border border-muted bg-white dark:bg-gray-900 px-1 py-2 shadow-md transition-all">
+            <EditorCommandEmpty className="px-2 text-gray-400 dark:text-gray-400">
               No results
             </EditorCommandEmpty>
             {suggestionItems.map((item) => (
               <EditorCommandItem
                 value={item.title}
                 onCommand={(val) => item.command(val)}
-                className={`flex w-full items-center space-x-2 rounded-md px-2 py-1 text-left text-sm hover:bg-accent aria-selected:bg-accent `}
+                className={`flex w-full items-center space-x-2 rounded-md px-2 py-1 text-left text-sm hover:bg-blue-50 hover:dark:bg-gray-700`}
                 key={item.title}
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-md border border-muted bg-background">
+                <div className="flex h-10 w-10 items-center justify-center rounded-md border border-muted bg-white dark:bg-gray-900">
                   {item.icon}
                 </div>
                 <div>
                   <p className="font-medium">{item.title}</p>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-gray-400 dark:text-gray-400">
                     {item.description}
                   </p>
                 </div>
@@ -100,7 +100,7 @@ const TailwindEditor = () => {
             tippyOptions={{
               placement: "top",
             }}
-            className="flex w-fit max-w-[90vw] overflow-hidden rounded border border-muted bg-background shadow-xl"
+            className="flex w-fit max-w-[90vw] overflow-hidden rounded border border-muted bg-white dark:bg-gray-900 shadow-xl"
           >
             <Separator orientation="vertical" />
             <NodeSelector open={openNode} onOpenChange={setOpenNode} />

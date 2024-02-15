@@ -136,7 +136,7 @@ export const ColorSelector = ({ open, onOpenChange }) => {
         align="start"
       >
         <div className="flex flex-col">
-          <div className="my-1 px-2 text-sm font-semibold text-muted-foreground">
+          <div className="my-1 px-2 text-sm font-semibold text-gray-400 dark:text-gray-400">
             Color
           </div>
           {TEXT_COLORS.map(({ name, color }, index) => (
@@ -151,7 +151,7 @@ export const ColorSelector = ({ open, onOpenChange }) => {
                     .setColor(color || "")
                     .run();
               }}
-              className="flex cursor-pointer items-center justify-between px-2 py-1 text-sm hover:bg-accent"
+              className="flex cursor-pointer items-center justify-between px-2 py-1 text-sm hover:bg-blue-50 hover:dark:bg-gray-700"
             >
               <div className="flex items-center gap-2">
                 <div
@@ -166,7 +166,7 @@ export const ColorSelector = ({ open, onOpenChange }) => {
           ))}
         </div>
         <div>
-          <div className="my-1 px-2 text-sm font-semibold text-muted-foreground">
+          <div className="my-1 px-2 text-sm font-semibold text-gray-400 dark:text-gray-400">
             Background
           </div>
           {HIGHLIGHT_COLORS.map(({ name, color }, index) => (
@@ -176,7 +176,7 @@ export const ColorSelector = ({ open, onOpenChange }) => {
                 editor.commands.unsetHighlight();
                 name !== "Default" && editor.commands.setHighlight({ color });
               }}
-              className="flex cursor-pointer items-center justify-between px-2 py-1 text-sm hover:bg-accent"
+              className="flex cursor-pointer items-center justify-between px-2 py-1 text-sm hover:bg-blue-50 hover:dark:bg-gray-700"
             >
               <div className="flex items-center gap-2">
                 <div

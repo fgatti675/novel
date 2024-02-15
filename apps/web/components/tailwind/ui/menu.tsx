@@ -70,7 +70,7 @@ export default function Menu() {
             </button>
           ))}
         </div> */}
-        <p className="p-2 text-xs font-medium text-muted-foreground">
+        <p className="p-2 text-xs font-medium text-gray-400 dark:text-gray-400">
           Appearance
         </p>
         {appearances.map(({ theme, icon }) => (
